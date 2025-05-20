@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Learning Dexterous Quadrupedal Transport with Tactile Sensing.">
+  <meta name="keywords" content="LocoTouch">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LocoTouch</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/locotouch_logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">LocoTouch: Learning Dexterous Quadrupedal Transport with Tactile Sensing</h1>
+          <div class="is-size-5 publication-authors" >
+            <span class="author-block"><a href="https://linchangyi1.github.io/">Changyi Lin</a><sup>1</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://rayxsong.com/">Yuxin Ray Song</a><sup>2</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://linchangyi1.github.io/LocoTouch">Boda Huo</a><sup>1</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://linchangyi1.github.io/LocoTouch">Mingyang Yu</a><sup>1</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=7ZZ9fOIAAAAJ&hl=zh-CN">Yikai Wang</a><sup>1</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://shiqiliu-67.github.io/">Shiqi Liu</a><sup>1</sup>,&ensp;</span><br>
+            <span class="author-block"><a href="https://yxyang.github.io/">Yuxiang Yang</a><sup>3</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://wenhaoyu.weebly.com/">Wenhao Yu</a><sup>3</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://research.google/people/tingnan-zhang/">Tingnan Zhang</a><sup>3</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://www.jie-tan.net/">Jie Tan</a><sup>3</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://yyueluo.com/">Yiyue Luo</a><sup>2</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://safeai-lab.github.io/people.html">Ding Zhao</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <div style="margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 40px;">
+              <img src="static/images/cmu_logo.jpg" alt="Carnegie Mellon University" style="width: 15%;">
+              <img src="static/images/uw_logo.png" alt="University of Washington" style="width: 20%;">
+              <img src="static/images/gdm_logo.png" alt="Google Deepmind" style="width: 15%;">
+            </div>
+          </div>
+          
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><img src="static/images/cmu_logo.jpg" alt="Carnegie Mellon University" width="15%" vertical-align="middle">&ensp;</span>
+            <span class="author-block"><sup>2</sup>University of Washington,&ensp;</span>
+            <span class="author-block"><sup>3</sup>Google Deepmind</span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- ArXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>ArXiv</span>
+                </a>
+              </span>
+
+              <!-- Appendix Link. -->
+              <span class="link-block">
+                <a href="https://github.com/linchangyi1/LocoTouch/blob/main/source/appendix.pdf"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Appendix</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/linchangyi1/LocoTouch"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Hardware & Code</span>
+                  </a>
+              </span>
+
+              <!-- Bilibili Link. -->
+              <span class="link-block">
+                <a href="https://www.bilibili.com/video/BV1sj42197HJ/?share_source=copy_web"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <!-- <i class="fab fa-bilibili"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z"/></svg>
+                    </span>
+                    <span>Bilibili</span>
+                </a>
+              </span>
+
+              <!-- twitter Link. -->
+              <span class="link-block">
+                <a href="https://x.com/changyi_lin1/status/1773368861741486371" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Summary</span>
+                </a>
+              </span>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="container">
+
+    <div class="columns is-centered has-text-centered">
+        <div class="publication-video">
+	      <iframe width="640" height="360" src="https://www.youtube.com/embed/d-GLiRPiHIE?si=fXklm0bm5Dc3liCj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="container">    
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column is-full">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Quadrupedal robots have emerged as versatile
+            agents capable of locomoting and manipulating in complex
+            environments. Traditional designs typically rely on the robot's
+            inherent body parts or incorporate top-mounted arms for
+            manipulation tasks. However, these configurations may limit
+            the robot's operational dexterity, efficiency and adaptability,
+            particularly in cluttered or constrained spaces.
+          </p>
+          <p>
+            In this work,
+            we present LocoMan, a dexterous quadrupedal robot with a
+            novel morphology to perform versatile manipulation in diverse
+            constrained environments. By equipping a Unitree Go1 robot with
+            two low-cost and lightweight modular 3-DoF loco-manipulators
+            on its front calves, LocoMan leverages the combined mobility and
+            functionality of the legs and grippers for complex manipulation
+            tasks that require precise 6D positioning of the end effector in a
+            wide workspace. To harness the loco-manipulation capabilities of
+            LocoMan, we introduce a unified control framework that extends
+            the whole-body controller (WBC) to integrate the dynamics of
+            loco-manipulators.
+          </p>
+          <p>
+            Through experiments, we validate that the
+            proposed whole-body controller can accurately and stably follow
+            desired 6D trajectories of the end effector and torso, which, when
+            combined with the large workspace from our design, facilitates
+            a diverse set of challenging dexterous loco-manipulation tasks in
+            confined spaces, such as opening doors, plugging into sockets,
+            picking objects in narrow and low-lying spaces, and bimanual
+            manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+	  
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="container is-centered has-text-centered">
+    <h2 class="title is-3">Design of Loco-Manipulator</h2>
+    <div class="content has-text-justified">
+      <p>
+        The core idea is to leverage the leg as an integral component of the "robotic arm" for executing 6D pose manipulation.
+        Therefore, we design Loco-Manipulator to contribute the other three DoFs.
+        Loco-Manipulator is compact, lightweight (147g), low-cost ($370), and easy-to-fabricate.
+        The main components are four commercially available servos (three for the joints and one for the gripper) and some 3d-printed parts.
+      </p>
+    </div>
+    <div class="columns">
+      <!-- Image column -->
+      <div class="column" style="flex: none; width: 60%;">
+        <img src="./static/images/design_half.png" alt="Design of Loco-Manipulator" style="margin-top: 42px;">
+      </div>
+      <!-- Video column -->
+      <div class="column">
+        <video id="render-video" controls autoplay muted loop>
+          <source src="./static/images/manipulator_render.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="container is-centered has-text-centered">
+    <h2 class="title is-3">A Unified Whole-Body Control Framework</h2>
+    <div class="content has-text-justified">
+      <p>
+        The robot commander supports five different operation modes, namely locomotion, locomanipulation, single-foot manipulation, single-gripper manipulation, and bimanual manipulation.
+        Each mode takes in different user commands from either predefined planners, human motions, or joysticks, which are converted to desired states by a corresponding task commander in the Robot Commander.
+        Then the unified whole-body controller (WBC) tracks the desired state based on LocoMan's kinematics and dynamics model.
+      </p>
+    </div>
+    <div class="column">
+      <img src="./static/images/pipeline.png" >
+    </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="container is-centered has-text-centered">
+    <h2 class="title is-3">Example of Teleoperation</h2>
+    <div class="content has-text-justified">
+      <p>
+        We develop a low-cost vision-based teleoperation platform to detect the motions of the human torso, palm, and thumb,
+        which are translated to command the 6D poses of LocoMan's torso and end effector, and the opening angle of its gripper.
+      </p>
+    </div>
+    <div class="column">
+      <video id="teleop-video" controls autoplay muted loop>
+        <source src="./static/images/Teleop.mp4" type="video/mp4">
+      </video>
+    </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="container is-centered has-text-centered">
+    <h2 class="title is-2" style="text-align: center;">Media</h2>
+    <div class="columns is-centered">
+    <div class="column is-centered has-text-centered">
+      <a target="_blank" href="https://spectrum.ieee.org/video-friday-locoman">
+        <img src="./static/images/ieee_spactrum_logo.png" width="90%"></img>
+      </a>
+    </div>
+
+    <div class="column is-centered has-text-centered">
+      <a target="_blank" href="https://techxplore.com/news/2024-04-dexterous-legged-robot-simultaneously.html?utm_source=twitter.com&utm_medium=social&utm_campaign=v2">
+        <img src="./static/images/techexplore_logo.png" width="90%"></img>
+      </a>
+    </div>
+
+    <div class="column is-centered has-text-centered">
+      <a target="_blank" href="https://engineering.cmu.edu/news-events/news/2024/05/13-home-helper-robot.html">
+        <img src="./static/images/cmu_eng_logo.svg" width="90%"></img>
+      </a>
+    </div>
+
+    <div class="column is-centered has-text-centered">
+      <a target="_blank" href="https://interestingengineering.com/innovation/locoman-qudrupedal-robot">
+        <img src="./static/images/Interesting_Engineering_logo.png" width="90%"></img>
+      </a>
+    </div>
+
+    </div>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{lin2024locoman,
+  title={LocoMan: Advancing Versatile Quadrupedal Dexterity with Lightweight Loco-Manipulators},
+  author={Lin, Changyi and Liu, Xingyu and Yang, Yuxiang and Niu, Yaru and Yu, Wenhao and Zhang, Tingnan and Tan, Jie and Boots, Byron and Zhao, Ding},
+  journal={arXiv preprint arXiv:2403.18197},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          This website is adapted from the <a rel="repository"
+          href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
