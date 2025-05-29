@@ -53,21 +53,21 @@
           <div class="is-size-5 publication-authors" >
             <span class="author-block"><a href="https://linchangyi1.github.io/">Changyi Lin</a><sup>1</sup>,&ensp;</span>
             <span class="author-block"><a href="https://rayxsong.com/">Yuxin Ray Song</a><sup>2</sup>,&ensp;</span>
-            <span class="author-block"><a href="https://linchangyi1.github.io/LocoTouch">Boda Huo</a><sup>1</sup>,&ensp;</span>
-            <span class="author-block"><a href="https://linchangyi1.github.io/LocoTouch">Mingyang Yu</a><sup>1</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/boda-huo-a795781a1/">Boda Huo</a><sup>1</sup>,&ensp;</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/mingyang-yu-a6498a244/">Mingyang Yu</a><sup>1</sup>,&ensp;</span>
             <span class="author-block"><a href="https://scholar.google.com/citations?user=7ZZ9fOIAAAAJ&hl=zh-CN">Yikai Wang</a><sup>1</sup>,&ensp;</span>
-            <span class="author-block"><a href="https://shiqiliu-67.github.io/">Shiqi Liu</a><sup>1</sup>,&ensp;</span><br>
+            <span class="author-block"><a href="https://shiqiliu-67.github.io/">Shiqi Liu</a><sup>1</sup>,</span><br>
             <span class="author-block"><a href="https://yxyang.github.io/">Yuxiang Yang</a><sup>3</sup>,&ensp;</span>
             <span class="author-block"><a href="https://wenhaoyu.weebly.com/">Wenhao Yu</a><sup>3</sup>,&ensp;</span>
             <span class="author-block"><a href="https://research.google/people/tingnan-zhang/">Tingnan Zhang</a><sup>3</sup>,&ensp;</span>
             <span class="author-block"><a href="https://www.jie-tan.net/">Jie Tan</a><sup>3</sup>,&ensp;</span>
             <span class="author-block"><a href="https://yyueluo.com/">Yiyue Luo</a><sup>2</sup>,&ensp;</span>
-            <span class="author-block"><a href="https://safeai-lab.github.io/people.html">Ding Zhao</a><sup>1</sup></span>
+            <span class="author-block"><a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html">Ding Zhao</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <div style="margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 40px;">
-              <img src="static/images/cmu_logo.jpg" alt="Carnegie Mellon University" style="width: 15%;">
+              <img src="static/images/cmu_logo.jpg" alt="Carnegie Mellon University" style="width: 13%;">
               <img src="static/images/uw_logo.png" alt="University of Washington" style="width: 20%;">
               <img src="static/images/gdm_logo.png" alt="Google Deepmind" style="width: 15%;">
             </div>
@@ -93,7 +93,7 @@
               </span>
 
               <!-- Appendix Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/linchangyi1/LocoTouch/blob/main/source/appendix.pdf"
                    class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
@@ -101,7 +101,7 @@
                   </span>
                   <span>Appendix</span>
                 </a>
-              </span>
+              </span> -->
 
               <!-- Code Link. -->
               <span class="link-block">
@@ -110,7 +110,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Hardware & Code</span>
+                  <span>Code (Coming)</span>
                   </a>
               </span>
 
@@ -148,33 +148,25 @@
 </section>
 
 
-
-<section class="section">
+<section class="hero teaser"style="margin-top: -15px;"  >
   <div class="container is-max-desktop">
-    <div class="container">
-      <video id="teaser" autoplay muted loop playsinline height="100%" stype="bottom: -500px">
+    <div class="container is-centered has-text-centered">
+      <img src="./static/images/system_setup.png" width="80%"></img>
+      <!-- <p style="font-size: small;">A Quadrupedal Robot Equipped with a High-Density Distributed Tactile Sensor</p> -->
+
+      <video autoplay muted loop playsinline height="100%" style="margin-top: 10px;">
         <source src="./static/videos/teaser.mp4" type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">CAJun</span> achieves continuous, long-distance jumping for quadrupedal robots, and can jump over a 60cm-wide yoga mat with additional clearance.
-      </h2>
+      <img width="100%" src="./static/images/teaser_video_caption.png"  style="margin-top: -7px;"></img>
+      <!-- <h2 class="subtitle has-text-centered">
+        LocoTouch enables quadrupedal robots to balance and transport unsecured objects with tactile sensing.
+      </h2> -->
+      <!-- <p style="font-size: small;">LocoTouch enables quadrupedal robots to balance and transport unsecured objects.</p> -->
     </div>
   </div>
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-  <div class="container">
-
-    <div class="columns is-centered has-text-centered">
-        <div class="publication-video">
-	      <iframe width="640" height="360" src="https://www.youtube.com/embed/d-GLiRPiHIE?si=fXklm0bm5Dc3liCj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-    </div>
-  </div>
-</section>
-````
 <section class="section">
   <div class="container is-max-desktop">
     <div class="container">    
@@ -185,112 +177,134 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Quadrupedal robots have emerged as versatile
-            agents capable of locomoting and manipulating in complex
-            environments. Traditional designs typically rely on the robot's
-            inherent body parts or incorporate top-mounted arms for
-            manipulation tasks. However, these configurations may limit
-            the robot's operational dexterity, efficiency and adaptability,
-            particularly in cluttered or constrained spaces.
+            Quadrupedal robots have demonstrated remarkable agility and robustness in traversing complex terrains.
+            However, they remain limited in performing object interactions that require sustained contact.
+            In this work, we present LocoTouch, a system that equips quadrupedal robots with tactile sensing to address a challenging task in this category:
+            long-distance transport of unsecured cylindrical objects, which typically requires custom mounting mechanisms to maintain stability. 
           </p>
           <p>
-            In this work,
-            we present LocoMan, a dexterous quadrupedal robot with a
-            novel morphology to perform versatile manipulation in diverse
-            constrained environments. By equipping a Unitree Go1 robot with
-            two low-cost and lightweight modular 3-DoF loco-manipulators
-            on its front calves, LocoMan leverages the combined mobility and
-            functionality of the legs and grippers for complex manipulation
-            tasks that require precise 6D positioning of the end effector in a
-            wide workspace. To harness the loco-manipulation capabilities of
-            LocoMan, we introduce a unified control framework that extends
-            the whole-body controller (WBC) to integrate the dynamics of
-            loco-manipulators.
+            For efficient large-area tactile sensing, we design a high-density distributed tactile sensor array that covers the entire back of the robot.
+            To effectively leverage tactile feedback for locomotion control, we develop a simulation environment with high-fidelity tactile signals,
+            and train tactile-aware transport policies using a two-stage learning pipeline.
+            Furthermore, we design a novel reward function to promote stable, symmetric, and frequency-adaptive locomotion gaits. 
           </p>
           <p>
-            Through experiments, we validate that the
-            proposed whole-body controller can accurately and stably follow
-            desired 6D trajectories of the end effector and torso, which, when
-            combined with the large workspace from our design, facilitates
-            a diverse set of challenging dexterous loco-manipulation tasks in
-            confined spaces, such as opening doors, plugging into sockets,
-            picking objects in narrow and low-lying spaces, and bimanual
-            manipulation.
+            After training in simulation, LocoTouch transfers zero-shot to the real world, reliably balancing and transporting a wide range of unsecured, cylindrical everyday objects with broadly varying sizes and weights.
+            Thanks to the responsiveness of the tactile sensor and the adaptive gait reward, LocoTouch can robustly balance objects with slippery surfaces over long distances, or even under severe external perturbations.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-	  
+  
+    <!-- Video Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+      <h2 class="title is-3" >Video Overview</h2>
+      <div class="columns is-centered has-text-centered">
+          <div class="publication-video">
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/d-GLiRPiHIE?si=fXklm0bm5Dc3liCj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+      </div>
+      </div>
+    </div>
+    <!--/ Video Overview. -->
+
   </div>
 </section>
 
 
-<section class="section">
+
+
+
+<section class="section" style="margin-top: -40px;">
   <div class="container is-max-desktop">
   <div class="container is-centered has-text-centered">
-    <h2 class="title is-3">Design of Loco-Manipulator</h2>
-    <div class="content has-text-justified">
-      <p>
-        The core idea is to leverage the leg as an integral component of the "robotic arm" for executing 6D pose manipulation.
-        Therefore, we design Loco-Manipulator to contribute the other three DoFs.
-        Loco-Manipulator is compact, lightweight (147g), low-cost ($370), and easy-to-fabricate.
-        The main components are four commercially available servos (three for the joints and one for the gripper) and some 3d-printed parts.
-      </p>
-    </div>
+    <!-- <h2 class="title is-3">Demonstrations on Real Robots</h2> -->
+
+    <!-- <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Agile Transport through Dense Obstacles</h2>
+    <video id="teaser" autoplay muted loop playsinline height="100%" stype="top:200px; bottom: -500px">
+      <source src="./static/videos/teaser.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: small;">LocoTouch achieves to transport unsecured objects through dense obstacles with sharp turns.</p> -->
+
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Long-Distance Transport of Unsecured Objects</h2>
     <div class="columns">
-      <!-- Image column -->
-      <div class="column" style="flex: none; width: 60%;">
-        <img src="./static/images/design_half.png" alt="Design of Loco-Manipulator" style="margin-top: 42px;">
+      <div class="column" style="flex: none; width: 50%;">
+        <video controls autoplay muted loop playsinline style="border-radius:10px; ">
+          <source src="./static/videos/long_distance_1_1080.mp4" type="video/mp4">
+        </video>
+        <p style="font-size: small;">Transport a 1.4kg cylinder over 40m.</p>
+        <!-- <h2 class="title is-5" style="margin-top: 10px; margin-bottom: 10px;">Transport a 1.4kg cylinder over 40m</h2> -->
       </div>
       <!-- Video column -->
       <div class="column">
-        <video id="render-video" controls autoplay muted loop>
-          <source src="./static/images/manipulator_render.mp4" type="video/mp4">
+        <video controls autoplay muted loop playsinline style="border-radius:10px; ">
+          <source src="./static/videos/long_distance_2_1080.mp4" type="video/mp4">
         </video>
+        <p style="font-size: small;">Transport a sleppery bottle over 60m.</p>
+        <!-- <h2 class="title is-5" style="margin-top: 10px; margin-bottom: 10px;">Transport a sleppery bottle over 60m</h2> -->
       </div>
     </div>
+
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Policy Generalization</h2>
+      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+        <source src="./static/videos/diverse_objects_1080.mp4" type="video/mp4">
+      </video>
+      <p style="font-size: small;">
+        Transport a wide range of cylindrical objects with different sizes and weights.<br>
+        Diameters: 0.03-0.18m;
+        Lengths: 0.10-1.26m;
+        Weights: 0.03-1.45kg.
+      </p>
+
+      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Policy Robustness</h2>
+      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+        <source src="./static/videos/robustnss_1080.mp4" type="video/mp4">
+      </video>
+
+      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Symmetric, Frequency-Adaptive Gaits</h2>
+      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+        <source src="./static/videos/adaptive_gait_1080.mp4" type="video/mp4">
+      </video>
+
+      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Teacher Policies Trained with and without Symmetricity Function</h2>
+      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+        <source src="./static/videos/symmetricity_1080.mp4" type="video/mp4">
+      </video>
+      <p style="font-size: small;">
+        We deploy both teacher policies on real robots with a forward velocity command of 0.3m/s.<br>
+        The baseline policy exhibits lateral drifting due to asymmetric deformation of the foot pairs.<br>
+        In contrast, our policy with symmetric gaits tracks the forward velocity command accurately.<br>
+        Details about the adaptive gait reward and symmetricity function can be found in the paper.
+      </p>
+
+      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Baseline: Locomotion-Only Policy</h2>
+      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+        <source src="./static/videos/policy_without_tactile.mp4" type="video/mp4">
+      </video>
+      <p style="font-size: small;">
+        The locomotion policy trained without object interaction totally fails to transport objects.
+      </p>
+
+      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">High-Fidelity Tactile Simulation</h2>
+      <img style="margin-top: 0px; margin-bottom: 0px;" src="./static/images/tactile_sim2real.png" width="90%"></img>
+      <p style="margin-top: 10px; font-size: small;">
+        <strong>InterSect</strong>: an intersection-only model that detects contact only at cable intersections;<br>
+        <strong>Filtered</strong>: a Gaussian-smoothed model that applies a Gaussian filter to the output of InterSect;<br>
+        <strong>Ours</strong>: the proposed expanded collision model that enlarges each taxel's effective sensing area.<br>
+        Our efficient and scalable modeling method generates the most high-fidelity tactile signals.
+      </p>
+
+
   </div>
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-  <div class="container is-centered has-text-centered">
-    <h2 class="title is-3">A Unified Whole-Body Control Framework</h2>
-    <div class="content has-text-justified">
-      <p>
-        The robot commander supports five different operation modes, namely locomotion, locomanipulation, single-foot manipulation, single-gripper manipulation, and bimanual manipulation.
-        Each mode takes in different user commands from either predefined planners, human motions, or joysticks, which are converted to desired states by a corresponding task commander in the Robot Commander.
-        Then the unified whole-body controller (WBC) tracks the desired state based on LocoMan's kinematics and dynamics model.
-      </p>
-    </div>
-    <div class="column">
-      <img src="./static/images/pipeline.png" >
-    </div>
-    </div>
-</section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-  <div class="container is-centered has-text-centered">
-    <h2 class="title is-3">Example of Teleoperation</h2>
-    <div class="content has-text-justified">
-      <p>
-        We develop a low-cost vision-based teleoperation platform to detect the motions of the human torso, palm, and thumb,
-        which are translated to command the 6D poses of LocoMan's torso and end effector, and the opening angle of its gripper.
-      </p>
-    </div>
-    <div class="column">
-      <video id="teleop-video" controls autoplay muted loop>
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
-      </video>
-    </div>
-    </div>
-</section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
   <div class="container is-centered has-text-centered">
     <h2 class="title is-2" style="text-align: center;">Media</h2>
@@ -321,18 +335,26 @@
 
     </div>
     </div>
-</section>
+</section> -->
+
+
+
+
+
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{lin2024locoman,
-  title={LocoMan: Advancing Versatile Quadrupedal Dexterity with Lightweight Loco-Manipulators},
-  author={Lin, Changyi and Liu, Xingyu and Yang, Yuxiang and Niu, Yaru and Yu, Wenhao and Zhang, Tingnan and Tan, Jie and Boots, Byron and Zhao, Ding},
-  journal={arXiv preprint arXiv:2403.18197},
-  year={2024}
-}</code></pre>
+    <pre><code>
+      <!-- @article{lin2024locoman,
+      title={LocoTouch: Learning Dexterous Quadrupedal Transport with Tactile Sensing},
+      author={Lin, Changyi and Liu, Xingyu and Yang, Yuxiang and Niu, Yaru and Yu, Wenhao and Zhang, Tingnan and Tan, Jie and Boots, Byron and Zhao, Ding},
+      journal={arXiv preprint arXiv:2403.18197},
+      year={2024}
+      } -->
+      Todo
+    </code></pre>
   </div>
 </section>
 
