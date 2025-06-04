@@ -251,54 +251,73 @@
       </div>
     </div>
 
-    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Policy Generalization</h2>
-      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
-        <source src="./static/videos/diverse_objects_1080.mp4" type="video/mp4">
-      </video>
-      <p style="font-size: small;">
-        Transport a wide range of cylindrical objects with different sizes and weights.<br>
-        Diameters: 0.03-0.18m;
-        Lengths: 0.10-1.26m;
-        Weights: 0.03-1.45kg.
-      </p>
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Generalizable Transport of Non-Cylinderical Objects</h2>
+    <div class="columns">
+      <div class="column" style="flex: none; width: 50%;">
+        <video controls autoplay muted loop playsinline style="border-radius:10px; ">
+          <source src="./static/videos/keyboard_airpods_480.mp4" type="video/mp4">
+        </video>
+        <p style="font-size: small;">Transport a keyboard and AirPods.</p>
+        <!-- <h2 class="title is-5" style="margin-top: 10px; margin-bottom: 10px;">Transport a 1.4kg cylinder over 40m</h2> -->
+      </div>
+      <!-- Video column -->
+      <div class="column">
+        <video controls autoplay muted loop playsinline style="border-radius:10px; ">
+          <source src="./static/videos/long_rail_720.mp4" type="video/mp4">
+        </video>
+        <p style="font-size: small;">Transport a 1.0m long rail.</p>
+        <!-- <h2 class="title is-5" style="margin-top: 10px; margin-bottom: 10px;">Transport a sleppery bottle over 60m</h2> -->
+      </div>
+    </div>
 
-      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Policy Robustness</h2>
-      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
-        <source src="./static/videos/robustnss_1080.mp4" type="video/mp4">
-      </video>
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Generalizable Transport of Diverse Cylinderical Objects</h2>
+    <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+      <source src="./static/videos/diverse_objects_1080.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: small;">
+      Transport a wide range of cylindrical objects with different sizes and weights.<br>
+      Diameters: 0.03-0.18m;
+      Lengths: 0.10-1.26m;
+      Weights: 0.03-1.45kg.
+    </p>
 
-      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Symmetric, Frequency-Adaptive Gaits</h2>
-      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
-        <source src="./static/videos/adaptive_gait_1080.mp4" type="video/mp4">
-      </video>
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Policy Robustness</h2>
+    <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+      <source src="./static/videos/robustnss_1080.mp4" type="video/mp4">
+    </video>
 
-      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Teacher Policies Trained with and without Symmetricity Function</h2>
-      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
-        <source src="./static/videos/symmetricity_1080.mp4" type="video/mp4">
-      </video>
-      <p style="font-size: small;">
-        We deploy both teacher policies on real robots with a forward velocity command of 0.3m/s.<br>
-        The baseline policy exhibits lateral drifting due to asymmetric deformation of the foot pairs.<br>
-        In contrast, our policy with symmetric gaits tracks the forward velocity command accurately.<br>
-        Details about the adaptive gait reward and symmetricity function can be found in the paper.
-      </p>
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Symmetric, Frequency-Adaptive Gaits</h2>
+    <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+      <source src="./static/videos/adaptive_gait_1080.mp4" type="video/mp4">
+    </video>
 
-      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Baseline: Locomotion-Only Policy</h2>
-      <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
-        <source src="./static/videos/policy_without_tactile.mp4" type="video/mp4">
-      </video>
-      <p style="font-size: small;">
-        The locomotion policy trained without object interaction totally fails to transport objects.
-      </p>
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Teacher Policies Trained with and without Symmetricity Function</h2>
+    <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+      <source src="./static/videos/symmetricity_1080.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: small;">
+      We deploy both teacher policies on real robots with a forward velocity command of 0.3m/s.<br>
+      The baseline policy exhibits lateral drifting due to asymmetric deformation of the foot pairs.<br>
+      In contrast, our policy with symmetric gaits tracks the forward velocity command accurately.<br>
+      Details about the adaptive gait reward and symmetricity function can be found in the paper.
+    </p>
 
-      <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">High-Fidelity Tactile Simulation</h2>
-      <img style="margin-top: 0px; margin-bottom: 0px;" src="./static/images/tactile_sim2real.png" width="90%"></img>
-      <p style="margin-top: 10px; font-size: small;">
-        <strong>InterSect</strong>: an intersection-only model that detects contact only at cable intersections;<br>
-        <strong>Filtered</strong>: a Gaussian-smoothed model that applies a Gaussian filter to the output of InterSect;<br>
-        <strong>Ours</strong>: the proposed expanded collision model that enlarges each taxel's effective sensing area.<br>
-        Our efficient and scalable modeling method generates the most high-fidelity tactile signals.
-      </p>
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">Baseline: Locomotion-Only Policy</h2>
+    <video controls autoplay muted loop playsinline style="border-radius:10px; width: 90%; margin-bottom: 0px;">
+      <source src="./static/videos/policy_without_tactile.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: small;">
+      The locomotion policy trained without object interaction totally fails to transport objects.
+    </p>
+
+    <h2 class="title is-4" style="margin-top: 40px; margin-bottom: 15px;">High-Fidelity Tactile Simulation</h2>
+    <img style="margin-top: 0px; margin-bottom: 0px;" src="./static/images/tactile_sim2real.png" width="90%"></img>
+    <p style="margin-top: 10px; font-size: small;">
+      <strong>InterSect</strong>: an intersection-only model that detects contact only at cable intersections;<br>
+      <strong>Filtered</strong>: a Gaussian-smoothed model that applies a Gaussian filter to the output of InterSect;<br>
+      <strong>Ours</strong>: the proposed expanded collision model that enlarges each taxel's effective sensing area.<br>
+      Our efficient and scalable modeling method generates the most high-fidelity tactile signals.
+    </p>
 
 
   </div>
