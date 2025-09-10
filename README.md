@@ -49,7 +49,7 @@ The learned policies can be tested with **MoCap** or deployed on an onboard **Ma
   - [x] Signal Reading and Processing for Distributed Tactile Sensors
   - [x] MoCap-Robot Communication via NaNet and ROS
   - [x] IsaacLab-compatible depoyment code for Locomotion, State-Based Transport, and Tactile-Aware Transport polcies
-  - [x] Mac Mini Setup with Custom-Designed Shell ([MacMini_for_Robots](https://github.com/linchangyi1/MacMini_for_Robots))
+  - [x] Mac Mini Setup with Custom-Designed Shell ([MacMini-for-Onboard-Robotics](https://github.com/linchangyi1/MacMini-for-Onboard-Robotics))
     <img src="rm_figs/full_back_example.png" width="100%">
 
 
