@@ -10,7 +10,7 @@
 1. [Overview](#overview)  
 2. [Key Features](#key-features)
 3. [Installation](#installation)  
-4. [Training, Play, and Deployment](#training-play-and-deployment)  
+4. [Training, Play, and Deployment](#training-play-and-deployment)
 5. [Known Issues](#known-issues)
 6. [FAQ](#faq)
 
@@ -119,7 +119,7 @@ Verify the installation by playing the teacher and student policies:
     ```
 
 
-## Training, Playing, and Deployment
+## Training, Play, and Deployment
 #### Locomotion (Optional)
 - RL Training:
   ```bash
