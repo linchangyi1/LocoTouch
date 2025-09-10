@@ -108,13 +108,15 @@ pip install -e .
 cd ..
 ```
 
-Verify the installation by playing these policies:
-```bash
-python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoTouch-Play-v1 --num_envs=20 --load_run=2025-09-01_21-03-58
-```
-```bash
-python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoTouch-Play-v1 --num_envs=20 --load_run=2025-09-01_21-03-58
-```
+Verify the installation by playing the teacher and student policies:
+  - Teacher Policy:
+    ```bash
+    python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoTouch-Play-v1 --num_envs=20 --load_run=2025-09-01_21-03-58
+    ```
+  - Student Policy:
+    ```bash
+    python locotouch/scripts/distill.py --task Isaac-RandCylinderTransportStudent_SingleBinaryTac_CNNRNN_Mon-LocoTouch-Play-v1 --num_envs=20 --log_dir_distill=2025-09-02_23-27-14 --checkpoint_distill=model_7.pt
+    ```
 
 
 ## Training, Playing, and Deployment
@@ -131,6 +133,8 @@ python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoT
   Follow the guide in [Go1-Deployment]() for installation, and run:
   ```bash
   python teleoperation/joystick.py
+  ```
+  ```bash
   python deploy/locomotion.py
   ```
 
@@ -147,7 +151,11 @@ python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoT
   Follow the guide in [Go1-Deployment]() for installation, and run:
   ```bash
   python teleoperation/joystick.py
+  ```
+  ```bash
   python mocap/run_optitrack.py
+  ```
+  ```bash
   python deploy/transport_teacher.py
   ```
   <img src="open_source_figs/teacher_sim.gif" width="48%">
@@ -174,7 +182,11 @@ python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoT
   Follow the guide in [Go1-Deployment]() for installation, and run:
   ```bash
   python teleoperation/joystick.py
+  ```
+  ```bash
   python tactile_sensing/run_tactile_sensing.py
+  ```
+  ```bash
   python deploy/transport_student.py
   ```
   <img src="open_source_figs/student_sim.gif" width="48%">
@@ -198,8 +210,8 @@ python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoT
 
 
 ## FAQ
-- Why IsaacSim 4.20 and IsaacLab 1.40?
-  LocoTouch consists of a Go1 robot and an array-based tactile sensor (17*13 tactile units), which requires customizing the URDF and converting it to USD. When attempting to update to IsaacLab 2.0, we encountered a critical [issue](https://github.com/isaac-sim/IsaacLab/issues/1800) with URDF conversion. Although the Isaac team has committed to resolving this in a future version of the URDF importer, we have not yet tested the fix. For future projects, we plan to migrate to newer versions, and if stability is confirmed, we will consider to update this project accordingly.
+1. Why IsaacSim 4.20 and IsaacLab 1.40?
+  - LocoTouch consists of a Go1 robot and an array-based tactile sensor (17*13 tactile units), which requires customizing the URDF and converting it to USD. When attempting to update to IsaacLab 2.0, we encountered a critical [issue](https://github.com/isaac-sim/IsaacLab/issues/1800) with URDF conversion. Although the Isaac team has committed to resolving this in a future version of the URDF importer, we have not yet tested the fix. For future projects, we plan to migrate to newer versions, and if stability is confirmed, we will consider to update this project accordingly.
 
 
 
