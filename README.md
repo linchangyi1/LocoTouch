@@ -27,14 +27,14 @@ The learned policies can be tested with **MoCap** or deployed on an onboard **Ma
 ## Key Features
 - **[LocoTouch](https://arxiv.org/abs/2505.23175)** Implementations
   - [x] Quadrupedal Transport Policy with Tactile Sensing
-    <img src="open_source_figs/locotouch_pipeline.png" width="100%">
+    <img src="rm_figs/locotouch_pipeline.png" width="100%">
   - [x] Adaptive Symmetric Locomotion Gait (via Symmetricity Reward Function)
-    <img src="open_source_figs/symmetric_gait.png" width="100%">
+    <img src="rm_figs/symmetric_gait.png" width="100%">
 
 
 - **Flexible Network Architectures** for RL/IL
   - [x] MLP Policy w/wo MLP/CNN Encoder, w/wo RNN Module
-    <img src="open_source_figs/models.png" width="80%">
+    <img src="rm_figs/models.png" width="80%">
   - [ ] Transformer Policy
   - [ ] Diffusion Policy
 
@@ -42,7 +42,7 @@ The learned policies can be tested with **MoCap** or deployed on an onboard **Ma
 - **Teacher-Student** Pipelines
   - [x] "[RMA](https://arxiv.org/pdf/2107.04034)" (Latent Supervision)
   - [x] "[Monolithic](https://arxiv.org/pdf/2211.07638)" (Action Supervision)
-  <!-- <img src="open_source_figs/rma_monolithic.png" width="80%" comment='copy from https://arxiv.org/pdf/2211.07638'> -->
+  <!-- <img src="rm_figs/rma_monolithic.png" width="80%" comment='copy from https://arxiv.org/pdf/2211.07638'> -->
   - [ ] "[ROA](https://arxiv.org/pdf/2210.10044)" (Regularized Online Latent Supervision)
 
 - **[Policy Deployment](https://github.com/linchangyi1/Go1-Policy-Deployment)**
@@ -50,7 +50,7 @@ The learned policies can be tested with **MoCap** or deployed on an onboard **Ma
   - [x] MoCap-Robot Communication via NaNet and ROS
   - [x] IsaacLab-compatible depoyment code for Locomotion, State-Based Transport, and Tactile-Aware Transport polcies
   - [x] Mac Mini Setup with Custom-Designed Shell ([MacMini_for_Robots](https://github.com/linchangyi1/MacMini_for_Robots))
-    <img src="open_source_figs/full_back_example.png" width="100%">
+    <img src="rm_figs/full_back_example.png" width="100%">
 
 
 - **Evaluated Perception Modalities**
@@ -158,8 +158,8 @@ Verify the installation by playing the teacher and student policies:
   ```bash
   python deploy/transport_teacher.py
   ```
-  <img src="open_source_figs/teacher_sim.gif" width="48%">
-  <img src="open_source_figs/teacher_real.gif" width="48%">
+  <img src="rm_figs/teacher_sim.gif" width="48%">
+  <img src="rm_figs/teacher_real.gif" width="48%">
 
 
 
@@ -189,8 +189,8 @@ Verify the installation by playing the teacher and student policies:
   ```bash
   python deploy/transport_student.py
   ```
-  <img src="open_source_figs/student_sim.gif" width="48%">
-  <img src="open_source_figs/student_real.gif" width="48%">
+  <img src="rm_figs/student_sim.gif" width="48%">
+  <img src="rm_figs/student_real.gif" width="48%">
 
 
 
