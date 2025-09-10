@@ -45,7 +45,7 @@ The learned policies can be tested with **MoCap** or deployed on an onboard **Ma
   <!-- <img src="open_source_figs/rma_monolithic.png" width="80%" comment='copy from https://arxiv.org/pdf/2211.07638'> -->
   - [ ] "[ROA](https://arxiv.org/pdf/2210.10044)" (Regularized Online Latent Supervision)
 
-- **[Policy Deployment]()**
+- **[Policy Deployment](https://github.com/linchangyi1/Go1-Policy-Deployment)**
   - [x] Signal Reading and Processing for Distributed Tactile Sensors
   - [x] MoCap-Robot Communication via NaNet and ROS
   - [x] IsaacLab-compatible depoyment code for Locomotion, State-Based Transport, and Tactile-Aware Transport polcies
@@ -130,7 +130,7 @@ Verify the installation by playing the teacher and student policies:
   python locotouch/scripts/play.py --task Isaac-Locomotion-LocoTouch-Play-v1 --num_envs=20
   ```
 - Deployment:
-  Follow the guide in [Go1-Deployment]() for installation, and run:
+  Follow the guide in [Go1-Policy-Deployment](https://github.com/linchangyi1/Go1-Policy-Deployment) for installation, and run:
   ```bash
   python teleoperation/joystick.py
   ```
@@ -148,7 +148,7 @@ Verify the installation by playing the teacher and student policies:
   python locotouch/scripts/play.py --task Isaac-RandCylinderTransportTeacher-LocoTouch-Play-v1 --num_envs=20
   ```
 - Deployment:
-  Follow the guide in [Go1-Deployment]() for installation, and run:
+  Follow the guide in [Go1-Policy-Deployment](https://github.com/linchangyi1/Go1-Policy-Deployment) for installation, and run:
   ```bash
   python teleoperation/joystick.py
   ```
@@ -179,7 +179,7 @@ Verify the installation by playing the teacher and student policies:
   python locotouch/scripts/distill.py --task Isaac-RandCylinderTransportStudent_SingleBinaryTac_CNNRNN_Mon-LocoTouch-Play-v1 --num_envs=20 --log_dir_distill=2025-09-02_23-27-14 --checkpoint_distill=model_7.pt
   ```
 - Deployment:
-  Follow the guide in [Go1-Deployment]() for installation, and run:
+  Follow the guide in [Go1-Policy-Deployment](https://github.com/linchangyi1/Go1-Policy-Deployment) for installation, and run:
   ```bash
   python teleoperation/joystick.py
   ```
