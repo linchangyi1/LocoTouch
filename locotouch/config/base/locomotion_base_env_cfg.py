@@ -127,7 +127,7 @@ class RewardsCfg:
         weight=-0.1,
         params={
             "asset_cfg": SceneEntityCfg("robot", body_names=".*foot"),
-            "height_threshold": 0.04,
+            "height_threshold": 0.03,
             "foot_vel_xy_threshold": 0.1,
         },
     )
