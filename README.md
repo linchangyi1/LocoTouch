@@ -164,14 +164,14 @@ Verify the installation by playing the teacher and student policies:
 
 
 #### Tactile-Aware Object Transport (Student Policy)
-- Distillation:
+- Distillation (replace wit your own load_run folder):
   ```bash
-  python locotouch/scripts/distill.py --task Isaac-RandCylinderTransportStudent _SingleBinaryTac_CNNRNN_Mon-LocoTouch-v1 --training --num_envs=405
+  python locotouch/scripts/distill.py --task Isaac-RandCylinderTransportStudent_SingleBinaryTac_CNNRNN_Mon-LocoTouch-v1 --training --num_envs=405 --headless --load_run=2025-09-01_21-03-58
   ```
 
   Additional options are supported, e.g.:
   ```bash
-  python locotouch/scripts/distill.py --task Isaac-RandCylinderTransportStudent _SingleBinaryTac_CNNRNN_Mon-LocoTouch-v1 --training --num_envs=405 --load_run=2025-09-01_21-03-58 --checkpoint=model_15000.pt --headless --distill_lr=0.0005
+  python locotouch/scripts/distill.py --task Isaac-RandCylinderTransportStudent_SingleBinaryTac_CNNRNN_Mon-LocoTouch-v1 --training --num_envs=405 --headless --load_run=2025-09-01_21-03-58 --checkpoint=model_15000.pt --headless --distill_lr=0.0005
   ```
 
 - Play (replace with your own log_dir_distill folder):
