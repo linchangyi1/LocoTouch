@@ -123,7 +123,7 @@ Verify the installation by playing the teacher and student policies:
 #### Locomotion (Optional)
 - RL Training:
   ```bash
-  python locotouch/scripts/train.py --task Isaac-RandCylinderTransportTeacher-LocoTouch-v1 --num_envs=4096 --headless
+  python locotouch/scripts/train.py --task Isaac-Locomotion-LocoTouch-v1 --num_envs=4096 --headless
   ```
 - Play:
   ```bash
