@@ -193,6 +193,20 @@ Verify the installation by playing the teacher and student policies:
   <img src="rm_figs/student_real.gif" width="48%">
 
 
+## VScode Setting
+Press `ctrl` + `shift` + `p`; choose Open Workspace Settings; modify and paste the following settings:
+```bash
+{
+  "python.analysis.extraPaths": [
+      "${workspaceFolder}/locotouch",
+      "${workspaceFolder}/locotouch/loco_rl",
+      "~/robotics_projects/IsaacLab/source/extensions/omni.isaac.lab_tasks",  # replace to your path
+      "~/robotics_projects/IsaacLab/source/extensions/omni.isaac.lab",  # replace to your path
+      "~/robotics_projects/IsaacLab/source/extensions/omni.isaac.lab_assets",  # replace to your path
+      "~/robotics_projects/IsaacLab/_isaac_sim",  # replace to your path
+  ]
+}
+```
 
 ## Known Issues
 - Python is not installed:
