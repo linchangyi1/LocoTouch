@@ -13,7 +13,7 @@ import locotouch.mdp as mdp
 class ModifyVelCommandsRangeBasedonReward(ManagerTermBase):
     def __init__(self, cfg: CurriculumTermCfg, env: ManagerBasedRLEnv):
         super().__init__(cfg, env)
-        self.current_command: mdp.UniformVelocityMultiSamplingCommand = env.command_manager.get_term(cfg.params['command_name'])
+        self.current_command: mdp.UniformVelocityCommandGaitLoggingMultiSampling = env.command_manager.get_term(cfg.params['command_name'])
         self.current_command_ranges = self.current_command.cfg.ranges
         self.command_maximum_ranges = cfg.params['command_maximum_ranges']
         curriculum_bins = cfg.params['curriculum_bins']
