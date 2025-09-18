@@ -9,7 +9,7 @@ import torch
 
 from loco_rl.modules.actor_critic import ActorCritic
 from loco_rl.models import *
-from loco_rl.loco_rl.models.model_generation import generate_model
+from loco_rl.models.model_generation import generate_model
 from loco_rl.utils import unpad_trajectories
 
 

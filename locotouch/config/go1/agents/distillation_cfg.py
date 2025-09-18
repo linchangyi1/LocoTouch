@@ -1,5 +1,5 @@
 from isaaclab.utils import configclass
-from loco_rl.loco_rl.models import ModelCfg
+from loco_rl.models import ModelCfg
 
 
 @configclass

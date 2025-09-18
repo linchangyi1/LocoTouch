@@ -14,7 +14,7 @@ from isaaclab_tasks.utils import get_checkpoint_path, parse_env_cfg
 from isaaclab_rl.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlVecEnvWrapper
 from locotouch.config.locotouch.agents.distillation_cfg import DistillationCfg
 from locotouch.distill import *
-from loco_rl.loco_rl.runners import OnPolicyRunner
+from loco_rl.runners import OnPolicyRunner
 
 
 class Distillation:

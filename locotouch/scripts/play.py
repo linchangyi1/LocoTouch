@@ -96,13 +96,13 @@ def main():
 
     actor_critic_class = agent_cfg.policy.class_name
     # if actor_critic_class == "ActorCriticEncoder":
-    #     from loco_rl.loco_rl.runners import OnPolicyRunner as LocoOnPolicyRunner
+    #     from loco_rl.runners import OnPolicyRunner as LocoOnPolicyRunner
     #     ppo_runner = LocoOnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
     # else:
     #     from rsl_rl.runners import OnPolicyRunner as RslOnPolicyRunner
     #     ppo_runner = RslOnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
 
-    from loco_rl.loco_rl.runners import OnPolicyRunner
+    from loco_rl.runners import OnPolicyRunner
     ppo_runner = OnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
 
 

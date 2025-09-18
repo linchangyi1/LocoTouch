@@ -122,13 +122,13 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     # print(f"[INFO] Playing with the policy on the joint: {joint_name}")
 
     # if agent_cfg.policy.class_name == "ActorCriticEncoder":
-    #     from loco_rl.loco_rl.runners import OnPolicyRunner as LocoOnPolicyRunner
+    #     from loco_rl.runners import OnPolicyRunner as LocoOnPolicyRunner
     #     runner = LocoOnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
     # else:
     #     from rsl_rl.runners import OnPolicyRunner as RslOnPolicyRunner
     #     runner = RslOnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
 
-    from loco_rl.loco_rl.runners import OnPolicyRunner
+    from loco_rl.runners import OnPolicyRunner
     runner = OnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
 
 

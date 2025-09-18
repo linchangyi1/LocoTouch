@@ -1,4 +1,4 @@
-from loco_rl.loco_rl.models import MLP, RNN, CNN2d, CNN2dHead, ModelCfg
+from loco_rl.models import MLP, RNN, CNN2d, CNN2dHead, ModelCfg
 
 def generate_model(
     input_dim:int,
