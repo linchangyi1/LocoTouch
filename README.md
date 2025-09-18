@@ -218,7 +218,8 @@ Press `ctrl` + `shift` + `p`; choose Open Workspace Settings; modify and paste t
         "${workspaceFolder}/../IsaacLab/source/isaaclab_rl",
         "${workspaceFolder}/../IsaacLab/source/isaaclab",
         "${workspaceFolder}/../IsaacLab/source/isaaclab_tasks",
-        "${workspaceFolder}/../IsaacLab/source/isaaclab_mimic"
+        "${workspaceFolder}/../IsaacLab/source/isaaclab_mimic",
+        "${workspaceFolder}/loco_rl"
     ]
 }
 ```
