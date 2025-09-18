@@ -214,11 +214,11 @@ Press `ctrl` + `shift` + `p`; choose Open Workspace Settings; modify and paste t
 {
     "python.analysis.extraPaths": [
         "${workspaceFolder}/_isaac_sim",
-        "${workspaceFolder}/../IsaacLab/source/isaaclab_assets",  # replace to your path
-        "${workspaceFolder}/../IsaacLab/source/isaaclab_rl",  # replace to your path
-        "${workspaceFolder}/../IsaacLab/source/isaaclab",  # replace to your path
-        "${workspaceFolder}/../IsaacLab/source/isaaclab_tasks",  # replace to your path
-        "${workspaceFolder}/../IsaacLab/source/isaaclab_mimic"  # replace to your path
+        "${workspaceFolder}/../IsaacLab/source/isaaclab_assets",
+        "${workspaceFolder}/../IsaacLab/source/isaaclab_rl",
+        "${workspaceFolder}/../IsaacLab/source/isaaclab",
+        "${workspaceFolder}/../IsaacLab/source/isaaclab_tasks",
+        "${workspaceFolder}/../IsaacLab/source/isaaclab_mimic"
     ]
 }
 ```
