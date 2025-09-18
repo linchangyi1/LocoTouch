@@ -29,7 +29,11 @@ class OnPolicyRunner:
         self.env = env
 
         # resolve dimensions of observations
-        obs, extras = self.env.get_observations()
+        # obs, extras = self.env.get_observations()
+        env_obs = self.env.get_observations()
+        obs = env_obs["policy"]
+        extras = {"observations": {k: v for k, v in env_obs.items() if k != "actor"}}
+
         num_obs = obs.shape[1]
         if "critic" in extras["observations"]:
             num_critic_obs = extras["observations"]["critic"].shape[1]
@@ -120,7 +124,10 @@ class OnPolicyRunner:
             )
 
         # start learning
-        obs, extras = self.env.get_observations()
+        # obs, extras = self.env.get_observations()
+        env_obs = self.env.get_observations()
+        obs = env_obs["policy"]
+        extras = {"observations": {k: v for k, v in env_obs.items() if k != "actor"}}
         critic_obs = extras["observations"].get("critic", obs)
         obs, critic_obs = obs.to(self.device), critic_obs.to(self.device)
         self.train_mode()  # switch to train mode (for dropout for example)
@@ -148,7 +155,10 @@ class OnPolicyRunner:
                     # Sample actions from policy
                     actions = self.alg.act(obs, critic_obs)
                     # Step environment
-                    obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                    # obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                    next_obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                    obs = next_obs["policy"]
+                    infos["observations"] = {k: v for k, v in next_obs.items()}
 
                     # Move to the agent device
                     obs, rewards, dones = obs.to(self.device), rewards.to(self.device), dones.to(self.device)

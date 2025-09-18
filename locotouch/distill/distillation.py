@@ -8,10 +8,10 @@ torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
 torch.backends.cudnn.deterministic = False
 torch.backends.cudnn.benchmark = False
-from omni.isaac.lab.envs import DirectMARLEnv, multi_agent_to_single_agent
-from omni.isaac.lab.utils.dict import print_dict
-from omni.isaac.lab_tasks.utils import get_checkpoint_path, parse_env_cfg
-from omni.isaac.lab_tasks.utils.wrappers.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlVecEnvWrapper
+from isaaclab.envs import DirectMARLEnv, multi_agent_to_single_agent
+from isaaclab.utils.dict import print_dict
+from isaaclab_tasks.utils import get_checkpoint_path, parse_env_cfg
+from isaaclab_rl.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlVecEnvWrapper
 from locotouch.config.locotouch.agents.distillation_cfg import DistillationCfg
 from locotouch.distill import *
 from loco_rl.loco_rl.runners import OnPolicyRunner
@@ -49,7 +49,10 @@ class Distillation:
         self.env = RslRlVecEnvWrapper(self.env)
 
         # dimensions
-        _, extras = self.env.get_observations()
+        # _, extras = self.env.get_observations()
+        env_obs = self.env.get_observations()
+        obs = env_obs["policy"]
+        extras = {"observations": {k: v for k, v in env_obs.items()}}
         observations = extras["observations"]
         proprioception_dim = observations["policy"].shape[-1] - observations["object_state"].shape[-1]
         tactile_signal_shape = observations["tactile"].shape[1:]
@@ -185,7 +188,10 @@ class Distillation:
 
     def play(self):
         self.student.eval()
-        _, extras = self.env.get_observations()
+        # _, extras = self.env.get_observations()
+        env_obs = self.env.get_observations()
+        obs = env_obs["policy"]
+        extras = {"observations": {k: v for k, v in env_obs.items()}}
         timestep = 0
         with torch.inference_mode():
             while self.simulation_app.is_running():
@@ -206,7 +212,9 @@ class Distillation:
                 
                 # step env
                 action = self.student.extract_input_and_forward(extras["observations"])
-                obs, rwd, dones, extras = self.env.step(action)
+                # obs, rwd, dones, extras = self.env.step(action)
+                next_obs, _, dones, extras = self.env.step(action)
+                extras = {"observations": {k: v for k, v in next_obs.items()}}
                 if dones.any():
                     # reset tactile recorder
                     done_idx = dones.nonzero(as_tuple=False).flatten()

@@ -103,10 +103,10 @@ if __name__ == "__main__":
 """
 python locotouch/utils/urdf_processor/generate_locotouch_urdf.py
 
-python ../../robotics_projects/IsaacLab/source/standalone/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch.urdf locotouch/assets/locotouch/locotouch_instanceable.usd --merge-joints --make-instanceable
-python ../../robotics_projects/IsaacLab/source/standalone/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch.urdf locotouch/assets/locotouch/locotouch.usd --merge-joints
-python ../../robotics_projects/IsaacLab/source/standalone/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch_without_tactile.urdf locotouch/assets/locotouch/locotouch_without_tactile_instanceable.usd --merge-joints --make-instanceable
-python ../../robotics_projects/IsaacLab/source/standalone/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch_without_tactile.urdf locotouch/assets/locotouch/locotouch_without_tactile.usd --merge-joints
+python ../IsaacLab/scripts/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch.urdf locotouch/assets/locotouch/locotouch_instanceable_new1.usd --merge-joints --make-instanceable
+python ../IsaacLab/scripts/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch.urdf locotouch/assets/locotouch/locotouch_new.usd --merge-joints
+python ../IsaacLab/scripts/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch_without_tactile.urdf locotouch/assets/locotouch/locotouch_without_tactile_instanceable_new.usd --merge-joints --make-instanceable
+python ../IsaacLab/scripts/tools/convert_urdf.py locotouch/utils/urdf_processor/go1/urdf/locotouch_without_tactile.urdf locotouch/assets/locotouch/locotouch_without_tactile_new.usd --merge-joints
 
 """
 

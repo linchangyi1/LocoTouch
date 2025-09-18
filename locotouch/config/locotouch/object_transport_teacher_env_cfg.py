@@ -1,8 +1,8 @@
 import math
-from omni.isaac.lab.managers import SceneEntityCfg, ObservationGroupCfg, ObservationTermCfg, TerminationTermCfg, EventTermCfg, RewardTermCfg
-from omni.isaac.lab.assets import RigidObjectCfg
-from omni.isaac.lab.utils import configclass
-from omni.isaac.lab.sensors import ContactSensorCfg
+from isaaclab.managers import SceneEntityCfg, ObservationGroupCfg, ObservationTermCfg, TerminationTermCfg, EventTermCfg, RewardTermCfg
+from isaaclab.assets import RigidObjectCfg
+from isaaclab.utils import configclass
+from isaaclab.sensors import ContactSensorCfg
 
 import locotouch.mdp as mdp
 from locotouch.config.base.locomotion_base_env_cfg import ObservationsCfg

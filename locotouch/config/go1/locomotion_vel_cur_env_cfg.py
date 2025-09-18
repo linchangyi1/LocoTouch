@@ -1,4 +1,4 @@
-from omni.isaac.lab.utils import configclass
+from isaaclab.utils import configclass
 from locotouch.config.base.locomotion_vel_cur_base_env_cfg import LocomotionVelCurBaseEnvCfg, locomotion_vel_cur_play_env_post_init_func
 from .locomotion_env_cfg import go1_locomotion_train_env_post_init_func, go1_locomotion_play_env_post_init_func
 

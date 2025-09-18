@@ -2,12 +2,12 @@ from __future__ import annotations
 import torch
 import torch.nn.functional as F
 from typing import TYPE_CHECKING
-from omni.isaac.lab.assets import RigidObject
-from omni.isaac.lab.managers import SceneEntityCfg, ManagerTermBase, ObservationTermCfg
-from omni.isaac.lab.sensors import ContactSensor
-from omni.isaac.lab.utils.math import quat_inv, quat_mul, quat_rotate_inverse, quat_from_euler_xyz
+from isaaclab.assets import RigidObject
+from isaaclab.managers import SceneEntityCfg, ManagerTermBase, ObservationTermCfg
+from isaaclab.sensors import ContactSensor
+from isaaclab.utils.math import quat_inv, quat_mul, quat_apply_inverse, quat_from_euler_xyz
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedEnv, ManagerBasedRLEnv
+    from isaaclab.envs import ManagerBasedEnv, ManagerBasedRLEnv
 
 
 # ----------------- Object State -----------------
@@ -28,10 +28,10 @@ def object_state_in_robot_frame(
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
     robot_quat_w = robot.data.root_quat_w
-    pos_in_robot_frame = quat_rotate_inverse(robot_quat_w, obj.data.root_pos_w - robot.data.root_pos_w)
-    lin_vel_in_robot_frame =  quat_rotate_inverse(robot_quat_w, obj.data.root_lin_vel_w - robot.data.root_lin_vel_w)
+    pos_in_robot_frame = quat_apply_inverse(robot_quat_w, obj.data.root_pos_w - robot.data.root_pos_w)
+    lin_vel_in_robot_frame =  quat_apply_inverse(robot_quat_w, obj.data.root_lin_vel_w - robot.data.root_lin_vel_w)
     quat_in_robot_frame = quat_mul(quat_inv(robot_quat_w), obj.data.root_quat_w)
-    ang_vel_in_robot_frame = quat_rotate_inverse(robot_quat_w, obj.data.root_ang_vel_w - robot.data.root_ang_vel_w)
+    ang_vel_in_robot_frame = quat_apply_inverse(robot_quat_w, obj.data.root_ang_vel_w - robot.data.root_ang_vel_w)
     state_in_robot_frame = torch.cat([pos_in_robot_frame, lin_vel_in_robot_frame, quat_in_robot_frame, ang_vel_in_robot_frame], dim=-1)
 
     # compute whether the object have made the first contact
@@ -129,7 +129,7 @@ class TactileSignals(ManagerTermBase):
 
     def get_original_signals(self):
         # get the normal forces in local sensor frame
-        self.original_normal_forces[:] = -quat_rotate_inverse(
+        self.original_normal_forces[:] = -quat_apply_inverse(
             self.asset.data.body_quat_w[:, self.asset_cfg.body_ids][:, :, :],
             self.contact_sensor.data.net_forces_w[:, self.sensor_cfg.body_ids])[..., 2].reshape(self.tactile_signals_shape)
         self.original_contact_taxels[:] = self.original_normal_forces > self.contact_threshold_envs_sensors

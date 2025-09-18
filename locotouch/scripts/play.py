@@ -4,7 +4,7 @@
 
 import argparse
 
-from omni.isaac.lab.app import AppLauncher
+from isaaclab.app import AppLauncher
 import cli_args
 
 # add argparse arguments
@@ -36,10 +36,10 @@ import os
 import torch
 torch.set_printoptions(sci_mode=False, precision=5)
 
-from omni.isaac.lab.envs import DirectMARLEnv, multi_agent_to_single_agent
-from omni.isaac.lab.utils.dict import print_dict
-from omni.isaac.lab_tasks.utils import get_checkpoint_path, parse_env_cfg
-from omni.isaac.lab_tasks.utils.wrappers.rsl_rl import (
+from isaaclab.envs import DirectMARLEnv, multi_agent_to_single_agent
+from isaaclab.utils.dict import print_dict
+from isaaclab_tasks.utils import get_checkpoint_path, parse_env_cfg
+from isaaclab_rl.rsl_rl import (
     RslRlOnPolicyRunnerCfg,
     RslRlVecEnvWrapper,
     export_policy_as_jit,
@@ -122,7 +122,10 @@ def main():
     # )
 
     # reset environment
-    obs, extras = env.get_observations()
+    # obs, extras = env.get_observations()
+    env_obs = env.get_observations()
+    obs = env_obs["policy"]
+
     # print("Shape of the observation: ", obs[0].shape)
     timestep = 0
     # simulate environment
@@ -193,7 +196,9 @@ def main():
             # print("Actions: ", actions[0])
             # input("Press Enter to continue...")
             # env stepping
-            obs, _, dones, extras = env.step(actions)
+            # obs, _, dones, extras = env.step(actions)
+            next_obs, _, dones, extras = env.step(actions)
+            obs = next_obs["policy"]
         if args_cli.video:
             timestep += 1
             # Exit the play loop after recording one video

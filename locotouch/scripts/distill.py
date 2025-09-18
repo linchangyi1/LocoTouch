@@ -1,7 +1,7 @@
 import sys
 import argparse
 import cli_args
-from omni.isaac.lab.app import AppLauncher
+from isaaclab.app import AppLauncher
 
 
 # add argparse arguments

@@ -1,7 +1,7 @@
 import math
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.managers import SceneEntityCfg, TerminationTermCfg
-from omni.isaac.lab.utils import configclass
+import isaaclab.sim as sim_utils
+from isaaclab.managers import SceneEntityCfg, TerminationTermCfg
+from isaaclab.utils import configclass
 
 import locotouch.mdp as mdp
 from .object_transport_teacher_env_cfg import *

@@ -1,6 +1,6 @@
 import math
-from omni.isaac.lab.utils import configclass
-from omni.isaac.lab.managers import CurriculumTermCfg
+from isaaclab.utils import configclass
+from isaaclab.managers import CurriculumTermCfg
 import locotouch.mdp as mdp
 from .locomotion_base_env_cfg import LocomotionBaseEnvCfg, smaller_scene_for_playing
 

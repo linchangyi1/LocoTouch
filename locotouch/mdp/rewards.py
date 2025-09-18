@@ -1,13 +1,13 @@
 from __future__ import annotations
 import math
 import torch
-from omni.isaac.lab.assets import Articulation, RigidObject
-from omni.isaac.lab.managers import SceneEntityCfg, ManagerTermBase, RewardTermCfg
-from omni.isaac.lab.sensors import ContactSensor
-from omni.isaac.lab.utils.math import quat_from_euler_xyz, quat_rotate, quat_rotate_inverse, euler_xyz_from_quat, quat_inv, quat_mul
+from isaaclab.assets import Articulation, RigidObject
+from isaaclab.managers import SceneEntityCfg, ManagerTermBase, RewardTermCfg
+from isaaclab.sensors import ContactSensor
+from isaaclab.utils.math import quat_from_euler_xyz, quat_apply, quat_apply_inverse, euler_xyz_from_quat, quat_inv, quat_mul
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedRLEnv
+    from isaaclab.envs import ManagerBasedRLEnv
 from locotouch.mdp.actions import JointPositionActionPrevPrev
 
 
@@ -375,7 +375,7 @@ class AdaptiveSymmetricGaitRewardwithObject(AdaptiveSymmetricGaitReward):
         _, _, robot_yaw = euler_xyz_from_quat(robot.data.root_quat_w)
         robot_quat_only_yaw = quat_from_euler_xyz(torch.zeros_like(robot_yaw), torch.zeros_like(robot_yaw), robot_yaw)
         obj_xy_pos_world = obj.data.root_pos_w - robot.data.root_pos_w
-        obj_xy_pos_robot_yaw = quat_rotate_inverse(robot_quat_only_yaw, obj_xy_pos_world)
+        obj_xy_pos_robot_yaw = quat_apply_inverse(robot_quat_only_yaw, obj_xy_pos_world)
         obj_xy_pos = torch.abs(obj_xy_pos_robot_yaw[:, :2])
         x_max = self._env.reward_manager.get_term_cfg("object_dangerous_state").params["x_max"]
         y_max = self._env.reward_manager.get_term_cfg("object_dangerous_state").params["y_max"]
@@ -486,7 +486,7 @@ def object_relative_xy_velocity_ngt(
     ) -> torch.Tensor:
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
-    lin_vel_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, obj.data.root_lin_vel_w - robot.data.root_lin_vel_w)
+    lin_vel_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, obj.data.root_lin_vel_w - robot.data.root_lin_vel_w)
     return torch.sum(torch.square(lin_vel_in_robot_frame[:, :2]), dim=1)
 
 def object_relative_z_velocity_ngt(
@@ -496,7 +496,7 @@ def object_relative_z_velocity_ngt(
     ) -> torch.Tensor:
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
-    lin_vel_in_robot_frame =  quat_rotate_inverse(robot.data.root_quat_w, obj.data.root_lin_vel_w - robot.data.root_lin_vel_w)
+    lin_vel_in_robot_frame =  quat_apply_inverse(robot.data.root_quat_w, obj.data.root_lin_vel_w - robot.data.root_lin_vel_w)
     return torch.square(lin_vel_in_robot_frame[:, 2])
 
 def object_relative_roll_pitch_angle_ngt(
@@ -506,8 +506,8 @@ def object_relative_roll_pitch_angle_ngt(
     ) -> torch.Tensor:
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
-    projected_gravity_w = quat_rotate(obj.data.root_quat_w, obj.data.projected_gravity_b)
-    projected_gravity_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, projected_gravity_w)
+    projected_gravity_w = quat_apply(obj.data.root_quat_w, obj.data.projected_gravity_b)
+    projected_gravity_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, projected_gravity_w)
     return torch.sum(torch.square(projected_gravity_in_robot_frame[:, :2]), dim=1)
 
 def object_relative_roll_pitch_velocity_ngt(
@@ -517,7 +517,7 @@ def object_relative_roll_pitch_velocity_ngt(
     ) -> torch.Tensor:
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
-    ang_vel_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, obj.data.root_ang_vel_w - robot.data.root_ang_vel_w)
+    ang_vel_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, obj.data.root_ang_vel_w - robot.data.root_ang_vel_w)
     return torch.sum(torch.abs(ang_vel_in_robot_frame[:, :2]), dim=1)
 
 def object_relative_roll_angle_ngt(
@@ -527,8 +527,8 @@ def object_relative_roll_angle_ngt(
     ) -> torch.Tensor:
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
-    projected_gravity_w = quat_rotate(obj.data.root_quat_w, obj.data.projected_gravity_b)
-    projected_gravity_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, projected_gravity_w)
+    projected_gravity_w = quat_apply(obj.data.root_quat_w, obj.data.projected_gravity_b)
+    projected_gravity_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, projected_gravity_w)
     return torch.square(projected_gravity_in_robot_frame[:, 1])
 
 def object_relative_roll_velocity_ngt(
@@ -538,7 +538,7 @@ def object_relative_roll_velocity_ngt(
     ) -> torch.Tensor:
     robot: RigidObject = env.scene[robot_cfg.name]
     obj: RigidObject = env.scene[object_cfg.name]
-    ang_vel_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, obj.data.root_ang_vel_w - robot.data.root_ang_vel_w)
+    ang_vel_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, obj.data.root_ang_vel_w - robot.data.root_ang_vel_w)
     return torch.square(ang_vel_in_robot_frame[:, 0])
 
 def object_relative_yaw_angle_ngt(
@@ -577,7 +577,7 @@ def object_dangerous_state_ngt(
     ) -> torch.Tensor:
     robot: RigidObject | Articulation = env.scene[robot_cfg.name]
     object: RigidObject | Articulation = env.scene[object_cfg.name]
-    object_posistion_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, object.data.root_pos_w - robot.data.root_pos_w)
+    object_posistion_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, object.data.root_pos_w - robot.data.root_pos_w)
     object_in_danger = torch.zeros_like(object_posistion_in_robot_frame[:, 0], dtype=torch.bool)
     if x_max is not None:
         object_in_danger |= torch.abs(object_posistion_in_robot_frame[:, 0]) > x_max
@@ -588,7 +588,7 @@ def object_dangerous_state_ngt(
     if roll_pitch_max is not None:
         object_in_danger |= torch.acos(-object.data.projected_gravity_b[:, 2]).abs() > (roll_pitch_max * math.pi / 180)
     if vel_xy_max is not None:
-        object_lin_vel_in_robot_frame = quat_rotate_inverse(robot.data.root_quat_w, object.data.root_lin_vel_w - robot.data.root_lin_vel_w)
+        object_lin_vel_in_robot_frame = quat_apply_inverse(robot.data.root_quat_w, object.data.root_lin_vel_w - robot.data.root_lin_vel_w)
         object_in_danger |= torch.linalg.norm(object_lin_vel_in_robot_frame[:, :2], dim=1) > vel_xy_max
     return object_in_danger
 

@@ -1,4 +1,4 @@
-from omni.isaac.lab.utils import configclass
+from isaaclab.utils import configclass
 from loco_rl.loco_rl.models import ModelCfg
 
 

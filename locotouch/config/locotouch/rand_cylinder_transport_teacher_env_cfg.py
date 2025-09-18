@@ -1,6 +1,6 @@
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.assets import RigidObjectCfg
-from omni.isaac.lab.utils import configclass
+import isaaclab.sim as sim_utils
+from isaaclab.assets import RigidObjectCfg
+from isaaclab.utils import configclass
 
 import numpy as np
 import locotouch.mdp as mdp

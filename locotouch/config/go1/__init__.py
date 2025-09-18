@@ -6,7 +6,7 @@ from . import locomotion_env_cfg, locomotion_vel_cur_env_cfg
 # ----------------------------------- Locomotion -----------------------------------
 gym.register(
     id="Isaac-Locomotion-Go1-v1",  # environment name
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",  # env type: <module>:<class>
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",  # env type: <module>:<class>
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": locomotion_env_cfg.LocomotionEnvCfg,  # environment configuration
@@ -16,7 +16,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Locomotion-Go1-Play-v1",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": locomotion_env_cfg.LocomotionEnvCfg_PLAY,
@@ -34,7 +34,7 @@ python locotouch/scripts/play.py --task Isaac-Locomotion-Go1-Play-v1 --num_envs=
 # ----------------------------------- Locomotion with Velocity Curriculum -----------------------------------
 gym.register(
     id="Isaac-LocomotionVelCur-Go1-v1",  # environment name
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",  # env type: <module>:<class>
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",  # env type: <module>:<class>
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": locomotion_vel_cur_env_cfg.LocomotionVelCurEnvCfg,  # environment configuration
@@ -44,7 +44,7 @@ gym.register(
 
 gym.register(
     id="Isaac-LocomotionVelCur-Go1-Play-v1",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": locomotion_vel_cur_env_cfg.LocomotionVelCurEnvCfg_PLAY,

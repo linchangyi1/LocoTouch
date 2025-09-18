@@ -1,5 +1,5 @@
 import torch
-from omni.isaac.lab.envs import ManagerBasedRLEnv
+from isaaclab.envs import ManagerBasedRLEnv
 import numpy as np
 from typing import Optional
 from tqdm import tqdm
@@ -31,7 +31,10 @@ class ReplayBuffer:
 
         with torch.no_grad():
         # with torch.inference_mode():
-            proprioception_object_state, extras = self._env.get_observations()
+            # proprioception_object_state, extras = self._env.get_observations()
+            env_obs = self._env.get_observations()
+            proprioception_object_state = env_obs["policy"]
+            extras = {"observations": {k: v for k, v in env_obs.items()}}
             while self._steps_count - start_count < num_steps:
                 # get observations and actions, then take a step
                 proprioception = proprioception_object_state[:, :self._proprioception_dim]
@@ -44,7 +47,10 @@ class ReplayBuffer:
                 self._tactile_recorder.record_new_tactile_signals(tactile_signal)
                 tactile_signals.append(self._tactile_recorder.get_tactile_signals())
                 # take a step
-                proprioception_object_state, reward, dones, extras = self._env.step(action)
+                # proprioception_object_state, reward, dones, extras = self._env.step(action)
+                next_obs, reward, dones, extras = self._env.step(action)
+                proprioception_object_state = next_obs["policy"]
+                extras["observations"] = {k: v for k, v in next_obs.items()}
                 self._reward_sums += reward.clone()
                 steps_count += 1
 

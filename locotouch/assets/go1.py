@@ -1,6 +1,6 @@
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.actuators import DCMotorCfg
-from omni.isaac.lab.assets.articulation import ArticulationCfg
+import isaaclab.sim as sim_utils
+from isaaclab.actuators import DCMotorCfg
+from isaaclab.assets.articulation import ArticulationCfg
 
 
 Go1_CFG = ArticulationCfg(

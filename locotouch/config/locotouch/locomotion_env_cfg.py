@@ -1,4 +1,4 @@
-from omni.isaac.lab.utils import configclass
+from isaaclab.utils import configclass
 from locotouch.config.base.locomotion_base_env_cfg import LocomotionBaseEnvCfg, smaller_scene_for_playing
 from locotouch.assets.locotouch import LocoTouch_Without_Tactile_Instanceable_CFG as Train_Robot_CFG
 from locotouch.assets.locotouch import LocoTouch_Without_Tactile_CFG as Play_Robot_CFG

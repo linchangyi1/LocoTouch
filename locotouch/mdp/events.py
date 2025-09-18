@@ -1,13 +1,13 @@
 from __future__ import annotations
 import torch
-import omni.isaac.lab.sim as sim_utils
-import omni.isaac.lab.utils.math as math_utils
-from omni.isaac.lab.assets import Articulation, RigidObject
-from omni.isaac.lab.managers import EventTermCfg, ManagerTermBase, SceneEntityCfg
-from omni.isaac.lab.utils.math import quat_rotate
+import isaaclab.sim as sim_utils
+import isaaclab.utils.math as math_utils
+from isaaclab.assets import Articulation, RigidObject
+from isaaclab.managers import EventTermCfg, ManagerTermBase, SceneEntityCfg
+from isaaclab.utils.math import quat_apply
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedEnv
+    from isaaclab.envs import ManagerBasedEnv
 
 
 def reset_object_state_uniform(
@@ -40,7 +40,7 @@ def reset_object_state_uniform(
     rand_samples[:, 2] += object_z
 
     # poses
-    positions = reference_frame_states[:, 0:3] + quat_rotate(reference_frame_states[:, 3:7], rand_samples[:, 0:3])
+    positions = reference_frame_states[:, 0:3] + quat_apply(reference_frame_states[:, 3:7], rand_samples[:, 0:3])
     orientations_delta = math_utils.quat_from_euler_xyz(rand_samples[:, 3], rand_samples[:, 4], rand_samples[:, 5])
     orientations = math_utils.quat_mul(reference_frame_states[:, 3:7], orientations_delta)
     # velocities

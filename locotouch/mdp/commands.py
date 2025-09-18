@@ -3,12 +3,12 @@ import torch
 from collections.abc import Sequence
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedEnv
-from omni.isaac.lab.envs.mdp.commands import UniformVelocityCommand
-from omni.isaac.lab.managers import SceneEntityCfg
-from omni.isaac.lab.sensors import ContactSensor
-from omni.isaac.lab.utils import configclass
-from omni.isaac.lab.envs.mdp.commands import UniformVelocityCommandCfg
+    from isaaclab.envs import ManagerBasedEnv
+from isaaclab.envs.mdp.commands import UniformVelocityCommand
+from isaaclab.managers import SceneEntityCfg
+from isaaclab.sensors import ContactSensor
+from isaaclab.utils import configclass
+from isaaclab.envs.mdp.commands import UniformVelocityCommandCfg
 
 
 class UniformVelocityCommandGaitLogging(UniformVelocityCommand):

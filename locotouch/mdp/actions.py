@@ -3,11 +3,11 @@ import torch
 from collections.abc import Sequence
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedEnv
-from omni.isaac.lab.managers.action_manager import ActionTerm
-from omni.isaac.lab.utils import configclass
-from omni.isaac.lab.envs.mdp.actions import JointPositionActionCfg
-from omni.isaac.lab.envs.mdp.actions import JointPositionAction
+    from isaaclab.envs import ManagerBasedEnv
+from isaaclab.managers.action_manager import ActionTerm
+from isaaclab.utils import configclass
+from isaaclab.envs.mdp.actions import JointPositionActionCfg
+from isaaclab.envs.mdp.actions import JointPositionAction
 
 
 class JointPositionActionPrevPrev(JointPositionAction):

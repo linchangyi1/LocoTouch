@@ -1,6 +1,6 @@
-from omni.isaac.lab.utils import configclass
-from omni.isaac.lab.sensors import ContactSensorCfg
-from omni.isaac.lab.managers import SceneEntityCfg, ObservationGroupCfg, ObservationTermCfg
+from isaaclab.utils import configclass
+from isaaclab.sensors import ContactSensorCfg
+from isaaclab.managers import SceneEntityCfg, ObservationGroupCfg, ObservationTermCfg
 import locotouch.mdp as mdp
 from locotouch.config.base.locomotion_base_env_cfg import ObservationsCfg
 from locotouch.assets.locotouch import LocoTouch_CFG
